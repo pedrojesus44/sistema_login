@@ -12,6 +12,7 @@
 
 <body>
     <div class="container text-center">
+        
         <div class="row">
             <div class="col">
                 <nav class="navbar bg-light">
@@ -59,34 +60,34 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <form class="row g-3">
+                    <form class="row g-3" method="post" action="controller/ControllerCadastro.php" id="form" name="form">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <input type="email" class="form-control" name="txtEmail" id="txtEmail">
                         </div>
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="inputPassword4">
+                            <input type="password" class="form-control" name="txtSenha" id="txtSenha">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Endereço</label>
-                            <input type="text" class="form-control" id="inputAdress">
+                            <input type="text" class="form-control" name="txtEndereco" id="txtEndereco">
                         </div>
                         <div class="col-6">
                             <label for="inputAdress2" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="inputAdress2">
+                            <input type="text" class="form-control" name="txtBairro" id="txtBairro">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Cep</label>
-                            <input type="text" class="form-control" id="inputAddress2">
+                            <input type="text" class="form-control" name="txtCep" id="txtCep">
                         </div>
                         <div class="col-md-6">
                             <label for="inputCity" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <input type="text" class="form-control" name="txtCidade" id="txtCidade">
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Estado</label>
-                            <select id="inputState" class="form-select">
+                            <select id="txtEstado" name="txtEstado" class="form-select">
                                 <option selected>Escolha...</option>
                                 <option value="1">AC</option>
                                 <option value="2">AL</option>
