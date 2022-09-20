@@ -60,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <form class="row g-3" method="post" action="controller/ControllerCadastro.php" id="form" name="form">
+                    <form class="row g-3" method="post" action="controller/ControllerCadastro.php?funcao=cadastro" id="form" name="form">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Email</label>
                             <input type="email" class="form-control" name="txtEmail" id="txtEmail">

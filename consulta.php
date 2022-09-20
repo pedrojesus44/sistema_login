@@ -1,3 +1,6 @@
+<?php
+require_once("../sistema_login/controller/ControllerCadastro.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,38 +67,30 @@
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Usuário</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Senha</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>
-                                <button type="button" class="btn btn-dark">Editar</button>
-                                <button type="button" class="btn btn-dark">Excluir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>
-                                <button type="button" class="btn btn-dark">Editar</button>
-                                <button type="button" class="btn btn-dark">Excluir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>
-                                <button type="button" class="btn btn-dark">Editar</button>
-                                <button type="button" class="btn btn-dark">Excluir</button>
-                            </td>
-                        </tr>
+                        <?php
+                        $controller = new cadastroController();
+                        $result = $controller->listar();
+                        //print_r($resultado);
+                        for ($i = 0; $i < count($result); $i++) {
+                        ?>
+                            <tr>
+                                <td scope="col"><?php echo $result[$i]['id']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['email']; ?></td>
+                                <td scope="col"><?php echo $result[$i]['senha']; ?></td>
+                                <td scope="col">
+                                    <button type="button" class="btn btn-dark">Editar</button>
+                                    <button type="button" class="btn btn-dark">Excluir</button>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
