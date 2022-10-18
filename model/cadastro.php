@@ -12,6 +12,9 @@ class Cadastro extends Banco {
     private $estado;
 
     //Metodos Set
+    public function setId($int){
+        $this->id = $int;
+    }
     public function setEmail($string){
         $this->email = $string;
     }
@@ -35,6 +38,9 @@ class Cadastro extends Banco {
     }
 
     //Metodos Get
+    public function getId(){
+        return $this->id;
+    }
     public function getEmail(){
         return $this->email;
     }
@@ -63,6 +69,10 @@ class Cadastro extends Banco {
 
     public function listar(){
         return $this->getCadastro();
+    }
+
+    public function editar(){
+        return $this->updateCadastro($this->getId(),$this->getEmail(),$this->getSenha(),$this->getEndereco(),$this->getBairro(),$this->getCep(),$this->getCidade(),$this->getEstado());
     }
 
 }

@@ -56,5 +56,14 @@ class Banco{
             echo "Ocorreu um erro ao tentar Buscar Todos." . $e;
         }
     }
+
+    public function updateCadastro($id,$email,$senha,$endereco,$bairro,$cep,$cidade,$estado){
+        $stmt = $this->mysqli->query("UPDATE cadastro SET `email` = '" . $email . "', `senha` = '" . $senha . "', `endereco` = '" . $endereco . "', `bairro` = '" . $bairro . "', `cep` = '" . $cep . "', `cidade` = '" . $cidade . "', `estado` = '" . $estado . "'");
+        if( $stmt > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }    
 ?>
