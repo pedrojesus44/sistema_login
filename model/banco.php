@@ -58,10 +58,19 @@ class Banco{
     }
 
     public function updateCadastro($id,$email,$senha,$endereco,$bairro,$cep,$cidade,$estado){
-        $stmt = $this->mysqli->query("UPDATE cadastro SET `email` = '" . $email . "', `senha` = '" . $senha . "', `endereco` = '" . $endereco . "', `bairro` = '" . $bairro . "', `cep` = '" . $cep . "', `cidade` = '" . $cidade . "', `estado` = '" . $estado . "'");
+        $stmt = $this->mysqli->query("UPDATE cadastro SET `email` = '" . $email . "', `senha` = '" . $senha . "', `endereco` = '" . $endereco . "', `bairro` = '" . $bairro . "', `cep` = '" . $cep . "', `cidade` = '" . $cidade . "', `estado` = '" . $estado . "' WHERE `id` = '" . $id . "';");
         if( $stmt > 0){
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public function deleteAgendamentos($id){
+        $stmt = $this->mysqli->query("DELETE FROM cadastro WHERE `id` = '" . $id . "';");
+        if( $stmt > 0){
+            return true;
+        } else{
             return false;
         }
     }

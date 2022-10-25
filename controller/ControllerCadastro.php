@@ -55,5 +55,14 @@ class cadastroController
             echo "<script>alert('Erro ao alterar o registro!');<script>";
         }
     }
+
+    public function excluir($id){
+        $result = $this->cadastro->excluir($id);
+        if($result >= 1){
+            echo "<script>alert('Registro excluido com sucesso!');document.location='consultarClientes.php'</script>";
+        }else{
+            echo "<script>alert('Erro ao excluir o registro!');</script>";
+        }
+    }
 }
 new cadastroController();

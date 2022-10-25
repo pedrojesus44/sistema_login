@@ -1,5 +1,7 @@
 <?php
 require_once("../sistema_login/controller/ControllerCadastro.php");
+require("../sistema_login/excluirClientes.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +87,7 @@ require_once("../sistema_login/controller/ControllerCadastro.php");
                                 <td scope="col"><?php echo $result[$i]['senha']; ?></td>
                                 <td scope="col">
                                     <button type="button" class="btn btn-dark" onclick="location.href='editarClientes.php?id=<?php echo $result[$i]['id']; ?>'">Editar</button>
-                                    <button type="button" class="btn btn-dark">Excluir</button>
+                                    <button type="button" class="btn btn-dark" onclick="javascript:confirmDelete('excluirClientes.php?id=<?php echo $result[$i]['id']; ?>')">Excluir</button>
                                 </td>
                             </tr>
                         <?php
