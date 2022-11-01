@@ -14,6 +14,7 @@ define('BD_BANCO','sistema_login');
 class Banco{
 
     protected $mysqli;
+    private $cadastro;
 
     public function __construct(){
         $this->conexao();
@@ -66,7 +67,7 @@ class Banco{
         }
     }
 
-    public function deleteAgendamentos($id){
+    public function deleteCadastro($id){
         $stmt = $this->mysqli->query("DELETE FROM cadastro WHERE `id` = '" . $id . "';");
         if( $stmt > 0){
             return true;

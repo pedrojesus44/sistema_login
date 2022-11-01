@@ -1,6 +1,6 @@
 <?php
 require_once("../sistema_login/controller/ControllerCadastro.php");
-require("../sistema_login/excluirClientes.php");
+//require_once("excluirClientes.php");
 
 ?>
 <!DOCTYPE html>
@@ -77,9 +77,9 @@ require("../sistema_login/excluirClientes.php");
                     <tbody>
                         <?php
                         $controller = new cadastroController();
-                        $result = $controller->listar();
+                        $result = $controller->listar(0);
                         //print_r($resultado);
-                        for ($i = 0; $i < count($result); $i++) {
+                        for ($i=0;$i<count($result);$i++) {
                         ?>
                             <tr>
                                 <td scope="col"><?php echo $result[$i]['id']; ?></td>
@@ -87,7 +87,7 @@ require("../sistema_login/excluirClientes.php");
                                 <td scope="col"><?php echo $result[$i]['senha']; ?></td>
                                 <td scope="col">
                                     <button type="button" class="btn btn-dark" onclick="location.href='editarClientes.php?id=<?php echo $result[$i]['id']; ?>'">Editar</button>
-                                    <button type="button" class="btn btn-dark" onclick="javascript:confirmDelete('excluirClientes.php?id=<?php echo $result[$i]['id']; ?>')">Excluir</button>
+                                    <button type="button" class="btn btn-dark" onclick="location.href='excluirClientes.php?id=<?php echo $result[$i]['id']; ?>'">Excluir</button>
                                 </td>
                             </tr>
                         <?php
