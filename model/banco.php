@@ -35,9 +35,14 @@ class Banco{
 
     }
 
-    public function getCadastro() {
+    public function getCadastro($id) {
         try {
-            $stmt = $this->mysqli->query("SELECT * FROM cadastro;");
+            if(isset($id) && $id > 0){
+                $stmt = $this->mysqli->query("SELECT * FROM cadastro WHERE id = '" . $id . "';");
+            } else {
+                $stmt = $this->mysqli->query("SELECT * FROM cadastro;");
+            }
+
             $lista = $stmt->fetch_all(MYSQLI_ASSOC);
             $f_lista = array();
             $i = 0;
